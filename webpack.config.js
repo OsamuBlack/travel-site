@@ -1,6 +1,7 @@
 // const autoprefixer = require('autoprefixer')
 const path = require('path')
 const postCssPlugins = [
+    require('postcss-import'),
     require('postcss-simple-vars'),
     require('postcss-nested'),
     require('autoprefixer')
@@ -20,7 +21,12 @@ module.exports = {
                 test: /\.css$/i,
                 use: [
                     'style-loader', 
-                    'css-loader?url=false', 
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            url: false
+                        }
+                    }, 
                     {
                         loader: 'postcss-loader', 
                         options: {
