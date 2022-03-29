@@ -1,0 +1,11 @@
+.text-center {
+    text-align: center;
+}
+
+.b-margin-smaller {
+    margin-bottom: 2rem;
+}
+
+.b-margin-large {
+    margin-bottom: 8rem;
+}

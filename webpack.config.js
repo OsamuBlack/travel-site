@@ -1,6 +1,8 @@
-// const autoprefixer = require('autoprefixer')
 const path = require('path')
+
+
 const postCssPlugins = [
+    require('postcss-mixins'),
     require('postcss-import'),
     require('postcss-simple-vars'),
     require('postcss-nested'),
@@ -14,7 +16,15 @@ module.exports = {
         path: path.resolve(__dirname, 'app')
     },
     mode: 'development',
-    watch: true,
+    devServer: {
+        watchFiles: ['./app/**/*.html'],
+        static: {
+            directory: path.join(__dirname, "app"),
+            watch: false
+        },
+        port: 3000,
+        hot: true,
+    },
     module: {
         rules: [
             {

@@ -1,0 +1,21 @@
+.row {
+
+    & > * {
+        float: left;
+    }
+
+    &__4 {
+        width: 33.33%;
+    }
+    
+    &__8 {
+        width: 66.66%
+    }
+
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+}
