@@ -1,11 +1,9 @@
-.text-center {
-    text-align: center;
-}
+.text-center {text-align: center;}
 
-.b-margin-smaller {
-    margin-bottom: 2rem;
-}
+.mb-sm-1 {margin-bottom: .8rem}
+.mb-sm-2 {margin-bottom: 1.6rem}
 
-.b-margin-large {
-    margin-bottom: 8rem;
+@mixin atMedium {
+    .mb-sm-1,
+    .mb-sm-2 {margin-bottom: 0}
 }

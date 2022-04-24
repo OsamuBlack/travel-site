@@ -1,5 +1,5 @@
 .headline {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 3rem;
     color: $main-blue;
 
@@ -32,5 +32,21 @@
     
     &--b-margin-large {
         margin-bottom: 1.6em;
+    }
+
+    &--no-t-margin {
+        margin-top: 0;
+    }
+}
+
+.generic-content-container {
+
+    p {
+        line-height: 1.65;
+        font-size: 1.8rem;
+    }
+
+    p a {
+        font-weight: 700;
     }
 }
