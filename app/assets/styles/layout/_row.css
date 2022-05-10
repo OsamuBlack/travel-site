@@ -15,6 +15,14 @@
         padding-right: 10rem;
     }
 
+    &--gutters-small {
+        margin-right: -4.5rem;
+    }
+
+    &--gutters-small > div {
+        padding-right: 4.5rem;
+    }
+
     @mixin atMedium {
         &__medium-4 {
             float: left;
@@ -40,5 +48,59 @@
         }
     }
 
+    @mixin atLarge {
+        &__large-4 {
+            float: left;
+            width: 33.33%;
+        }
+    
+        &__large-6 {
+            float: left;
+            width: 50.0%;
+        }
+
+        &__large-4--larger {
+            width: 37%;
+        }
+
+        &__large-8 {
+            float: left;
+            width: 66.66%;
+        }
+
+        &__large-8--larger {
+            width: 63%;
+        }
+    }
+
+    &--t-padding {
+        padding-top: 8rem;
+    }
+
     @mixin clearfix;
+
+    &--flex-at-medium
+    {
+        @mixin atMedium {
+            display: flex;
+    
+            & > div {
+                float: none;
+                display: flex;
+            }
+        }
+    }
+
+    &--flex-at-large
+    {
+        @mixin atLarge {
+            display: flex;
+            
+            & > div {
+                float: none;
+                display: flex;
+            }
+        }
+
+    }
 }
