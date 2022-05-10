@@ -43,7 +43,7 @@
     font-weight: 300;
     text-align: center;
     font-size: 4rem;
-    
+
     @mixin atSmall {
         font-size: 6rem;
     }
@@ -53,7 +53,22 @@
     }
 
     &__icon {
-        margin-right: .8rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        
+        @mixin atSmall {
+            margin-right: .8rem;
+            position: relative;
+            top: .8rem;
+            margin-left: 0;
+            margin-rignt: 0;
+            display: inline-block;
+        }
+    }
+
+    &--blue {
+        color: $main-blue;
     }
 }
 
