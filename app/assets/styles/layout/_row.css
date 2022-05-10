@@ -7,12 +7,25 @@
         padding-right: 6.5rem;
     }
 
+    &--gutters-large {
+        margin-right: -10rem;
+    }
+
+    &--gutters-large > div {
+        padding-right: 10rem;
+    }
+
     @mixin atMedium {
         &__medium-4 {
             float: left;
             width: 33.33%;
         }
-        
+    
+        &__medium-6 {
+            float: left;
+            width: 50.0%;
+        }
+
         &__medium-4--larger {
             width: 37%;
         }
