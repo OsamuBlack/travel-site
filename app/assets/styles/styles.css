@@ -6,8 +6,9 @@
 @import 'base/_typography';
 
 @import 'layout/_wrapper';
-@import 'layout/_page-section';
 @import 'layout/_row';
+@import 'layout/_page-section';
+@import 'layout/_site-footer';
 
 @import 'modules/_btn';
 @import 'modules/_large-hero';
