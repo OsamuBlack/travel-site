@@ -15,5 +15,6 @@
 @import 'modules/_large-hero';
 @import 'modules/_feature-item';
 @import 'modules/_testimonial';
+@import 'modules/_reveal-item';
 
 @import 'base/_utilities';
