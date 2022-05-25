@@ -70,6 +70,10 @@
     &--blue {
         color: $main-blue;
     }
+
+    &--less-margin {
+        margin-top: 0;
+    }
 }
 
 .generic-content-container {
