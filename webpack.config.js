@@ -14,6 +14,14 @@ const postCssPlugins = [
     require('autoprefixer')
 ] 
 
+class RunAfterCompile {
+    apply(compiler) {
+        compiler.hooks.done.tap('Copy Images', function() {
+            fse.copySync('./app/assets/images', './dist/assets/images')
+        })
+    }
+}
+
 let cssConfig = {
     test: /\.css$/i,
     use: [
@@ -72,6 +80,18 @@ if (currentTask == 'dev') {
 }
 if (currentTask == 'built')
 {
+    config.module.rules.push(
+        {
+            test: /\.js$/,
+            exclude: /(node-modules)/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env']
+                }
+            }
+        }
+    )
     cssConfig.use.unshift(MiniCssExtractPlugin.loader)
     config.output = {
         filename: '[name].[chunkhash].js',
@@ -86,7 +106,8 @@ if (currentTask == 'built')
     }
     config.plugins.push(
         new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({filename: 'styles.[chunkhash].css'})
+        new MiniCssExtractPlugin({filename: 'styles.[chunkhash].css'}),
+        new RunAfterCompile()
     )
 }
 
